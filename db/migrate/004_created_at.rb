@@ -10,15 +10,11 @@
 
 # !!! Before you run rake db:migrate, remember to fill out the other migration files -- otherwise you'll get an error resulting from the blank migration files.
 
-class CreateCostumes < ActiveRecord::Migration[5.1]
+class CreatedAt < ActiveRecord::Migration[5.1]
     def change 
-        create_table :costumes do |t|
-          t.string :name
-          t.float :price
-          t.string :size
-          t.string :image_url
-        
-          
+        add_column :costumes, :create_at, :date, :default => Time.now
+
+        #Ex:- add_column("admin_users", "username", :string, :limit =>25, :after => "email")
         end
-    end
+    
 end
